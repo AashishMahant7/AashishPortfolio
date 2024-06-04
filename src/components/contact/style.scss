@@ -1,0 +1,144 @@
+@import '../../mixins.scss';
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem 0;
+    h2{
+        font-size: 3rem;
+        color: var(--theme);
+        text-align: center;
+        align-self: center;
+    }
+    .contact-container{
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        .left{
+            max-width: 33rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            .content{
+                color: var(--theme-text);
+                letter-spacing: 1px;
+                line-height: 1.8rem;
+                font-size: 1.1rem;
+                text-align: center;
+            }
+            .contact-detail{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .5rem;
+                h3{
+                    color: var(--theme-text);
+                    font-size: 1.2rem;
+                }
+                p{
+                    color: var(--theme-2);
+                    transition-duration: .4s;
+                    font-size: .9rem;
+                    &:hover{
+                        color: var(--theme);
+                    }
+                }
+                
+                a{
+                    color: var(--theme-2);
+                    transition-duration: .4s;
+                    font-size: .9rem;
+                    &:hover{
+                        color: var(--theme);
+                    }
+                }
+            }
+            @include lg{
+                max-width: none;
+                gap: 1rem;
+            }
+        }
+        .right{
+            width: 33rem;
+            background-color: var(--theme);
+            padding: .6rem 0;
+            border-radius: 1rem;
+            box-shadow: 0 0 20px var(--theme-shadow);
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                background-color: var(--theme-card);
+                border-radius: 1rem;
+                padding: 2.5rem;
+                .inp{
+                    padding: .7rem;
+                    border-radius: .5rem;
+                    outline: none;
+                    background-color: transparent;
+                    border: 2px solid var(--theme-2);
+                    color: var(--bs-white);
+                    box-shadow: 0 0 5px var(--theme-2);
+                    font-size: .9rem;
+                    &::placeholder{
+                        color: var(--theme-text-2);
+                        font-size: .9rem;
+                    }
+                    &:focus{
+                        box-shadow: 0 0 20px var(--theme-2);
+                    }
+                }
+                .text-area{
+                    color: var(--theme-text);
+                    padding: .7rem;
+                    border-radius: .5rem;
+                    outline: none;
+                    background-color: transparent;
+                    border: 2px solid var(--theme-2);
+                    box-shadow: 0 0 5px var(--theme-2);
+                    resize: none;
+                    font-size: .9rem;
+                    &::placeholder{
+                        color: var(--theme-text-2);
+                        font-size: .9rem;
+                    }
+                    &:focus{
+                        box-shadow: 0 0 20px var(--theme-2);
+                    }
+                }
+                .submit{
+                    height: 3.2rem;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    padding: .7rem;
+                    border-radius: .5rem;
+                    border: none;
+                    color: var(--theme2);
+                    background-color: var(--theme);
+                    box-shadow: 0 0 5px var(--theme-shadow);
+                    transition-duration: .4s;
+                    &:hover{
+                        box-shadow: 0 0 15px var(--theme-shadow);
+                    }
+                }
+            }
+            @include lg{
+                margin-inline: auto;
+            }
+            @include sm{
+                width: 100%;
+                max-width: 30rem;
+            }
+        }
+        @include lg{
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+    @include lg{
+        padding: 3rem 0;
+        gap: 2.5rem;
+    }
+}

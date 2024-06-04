@@ -1,0 +1,112 @@
+@import '../../mixins.scss';
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 4rem 0;
+
+    .left{
+        flex: .8;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+        .intro{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            color: var(--theme-text);
+            h1{
+                font-size: 3rem;
+                color: var(--theme);
+                text-shadow: 1px 1px 3px var(--theme-shadow);
+                @include sm{
+                    font-size: 2.5rem;
+                }
+            }
+            h2{
+                font-size: 1.6rem!important;
+                span{
+                    color: var(--theme-2);
+                }
+                @include sm{
+                    font-size: 1.4rem!important;
+                }
+            }
+        }
+        .summary{
+            color: var(--theme-text-2);
+            letter-spacing: 1px;
+            line-height: 1.5rem;
+        }
+        .social-group{
+            @include sm{
+                margin-top: 1.5rem;
+            }
+        }
+        .resume{
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: .5rem 1.8rem;
+            border-radius: 2rem;
+            border: 2px solid var(--theme);
+            color: var(--theme);
+            box-shadow: 0 0 10px var(--theme);
+            transition-duration: .4s;
+            &:hover{
+                border: 2px solid var(--theme);
+                color: var(--theme);
+                box-shadow: 0 0 20px var(--theme);
+                text-shadow: 0 0 20px var(--theme);
+            }
+            @include sm{
+                margin-top: 1.5rem;
+            }
+        }
+        @include lg{
+            flex: 1;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img-box{
+            margin-right: 1.2rem;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            // box-shadow: 0 0 20px var(--theme);
+            @include lg{
+                width: 16rem;
+                height: 16rem;
+                margin: 0;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                animation: spin infinite 20s linear;
+            }
+        }
+    }
+
+    @include lg{
+        flex-direction: column-reverse;
+        padding: 3rem 0;
+        gap: 2.5rem;
+    }
+}
+
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}

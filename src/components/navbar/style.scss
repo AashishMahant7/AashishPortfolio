@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import '../../mixins.scss';
+
+
+.header{
+    background-color: var(--theme-card);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 0 15px var(--theme-shadow);
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .4rem 0;
+
+        .logo{
+            font-size: 2.3rem;
+            font-weight: 500;
+            font-family: 'Yesteryear', cursive;
+            text-shadow: 1px 1px 1px var(--theme-shadow);
+            span{
+                color: var(--theme);
+                font-family: 'Yesteryear', cursive;
+            }
+            color: var(--theme-text);
+        }
+
+        .menus{
+            display: flex;
+            align-items: center;
+            .menu{
+                padding-inline: .8rem;
+                color: var(--theme-text);
+                font-size: 1.1rem;
+                font-weight: 600;
+                transition-duration: .4s;
+                &.active{
+                    color: var(--theme);
+                }
+                &:hover{
+                    color: var(--theme);
+                }
+            }
+                     
+            @include md{
+                display: none;
+            }  
+        }
+        .toggle-menu{
+            display: none;
+            cursor: pointer;
+            color: var(--theme-text);
+            font-size: 2.1rem;
+            &:hover{
+                color: var(--theme);
+            }
+            @include md{
+                display: block;
+            }
+        }
+    }
+}
+
+.mobile-drawer{
+    display: none;
+    
+    @include md{
+        display: block;
+    }
+}
+
+.drawer{
+    display: none;
+    
+    @include md{
+        display: block;
+    }
+}
+
+.mobile-menus{
+    height: 100vh;
+    width: 20rem;
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--theme-card);
+    .menu{
+        color: var(--theme-text);
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition-duration: .4s;
+        &.active{
+            color: var(--theme);
+        }
+        &:hover{
+            color: var(--theme);
+        }
+    }
+}
